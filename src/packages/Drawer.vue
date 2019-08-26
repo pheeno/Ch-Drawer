@@ -54,7 +54,7 @@ export default {
     },
     area: {
       type: [String, Number],
-      default: '35%'
+      default: '25%'
     },
     customClass: String,
     title: String,
