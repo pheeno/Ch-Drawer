@@ -7,6 +7,7 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
+    "test": "vue-cli-service test:unit",
     "style-reset":"rimraf ./src/packages/style.css",
     "style-output":"stylus ./src/packages/style.styl -o ./src/packages/style.css",
     "style-check":"npm run style-reset & npm run style-output" 

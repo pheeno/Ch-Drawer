@@ -15,9 +15,9 @@ Vue.use(ChDrawer)
 | Attribute | Type | Accepted Values | Description | Default |
 |:--: | :--: | -- | -- | :--:|
 | visible | Boolean |  | Should drawer component be displayed support ```.sync``` notation | false|
-area | String/Number || Drawer's area, if Drawer is horizontal mode it will effect ```width``` proporty, otherwise it weill effect ```height```proporty, when area is ```number``` type it define the area by pixels, when area is ```string```type it define the area by ```z%```|'25%'|
-close-visible| Boolean |  | Display of close button | true |
-mask | Boolean | | Display of mask of drawer | true | 
+area | String/Number || Drawer's area, if Drawer is horizontal mode it will effect ```width``` proporty, otherwise it will effect ```height```proporty, when area is ```number``` type it define the area by pixels, when area is ```string```type it define the area by ```z%```|'25%'|
+close-visible| Boolean |  | Should show  close button | true |
+mask | Boolean | | Should  masked  drawer's container | true | 
 blur | Boolean | Should change```document.body``` become blurry | true |
 destroy-on-close|Boolean| | Should destroy component in default slot,if set value to be ```true``` it will be destroyed after hidding drawer | false |
 title | String || title string will inserted in ```header slot```| - | 
@@ -30,6 +30,7 @@ open |||Trigger when drawer open | - |
 opened |||Trigger when drawer open animation is finished | - |
 close ||| Trigger when drawer close | - | 
 closed ||| Trigger when drawer closed animation is finished | - |
+header | Slot | 
 
 
 
