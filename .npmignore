@@ -1,0 +1,15 @@
+/.vscode/
+/node_modules/
+/public/
+/tests/
+/.browserslistrc
+/.env.analyz
+/vue.config.js
+/output.js
+/jest.config.js
+/babel.config.js
+/.travis.yml
+/.editorconfig
+/docs/
+/.eslintrc
+/postcss.config.js

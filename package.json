@@ -1,22 +1,29 @@
 {
-  "name": "template",
-  "version": "0.1.0",
-  "private": true,
+  "name": "ch-drawer",
+  "version": "0.0.2",
+  "private": false,
+  "main": "dist/ch-drawer.common.js",
+  "keyword": "vue-drawer drawer web-drawer",
+  "author": "Johnny 'Boggie' Ness",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:pheeno/Ch-Drawer.git"
+  },
   "scripts": {
     "dev": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build --target lib --name ch-drawer src/packages/index.js",
+    "build:analyz": "vue-cli-service build --mode analyz --target lib --name ch-drawer src/packages/index.js",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
     "test": "vue-cli-service test:unit",
-    "style-reset":"rimraf ./src/packages/style.css",
-    "style-output":"stylus ./src/packages/style.styl -o ./src/packages/style.css",
-    "style-check":"npm run style-reset & npm run style-output" 
-  },
-  "dependencies": {
-    "core-js": "^2.6.5",
-    "vue": "^2.6.10"
+    "style-reset": "rimraf ./src/packages/style.css",
+    "style-output": "stylus ./src/packages/style.styl -o ./src/packages/style.css",
+    "style-check": "npm run style-reset & npm run style-output"
   },
   "devDependencies": {
+    "core-js": "^2.6.5",
+    "vue": "^2.6.10",
     "@vue/cli-plugin-babel": "^3.9.0",
     "@vue/cli-plugin-eslint": "^3.9.0",
     "@vue/cli-plugin-unit-jest": "^3.9.0",
@@ -32,11 +39,5 @@
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
     "vue-template-compiler": "^2.6.10"
-  },
-  "lint-staged": {
-    "*.{js,vue}": [
-      "vue-cli-service lint",
-      "git add"
-    ]
   }
 }

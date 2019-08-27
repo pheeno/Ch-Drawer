@@ -1,4 +1,7 @@
-# Ch-Drawer  ![Build Status](https://www.travis-ci.org/pheeno/Ch-Drawer.svg?branch=master)
+# Ch-Drawer  
+
+![Build Status](https://www.travis-ci.org/pheeno/Ch-Drawer.svg?branch=master)
+
 A simple drawer component based on Vue.js and used on Web
 ## Install
 ```
@@ -23,14 +26,17 @@ destroy-on-close|Boolean| | Should destroy component in default slot,if set valu
 title | String || title string will inserted in ```header slot```| - | 
 custom-class | String || Add a custom class on drawer container | - |
 location | String |'left'/'right'/'top'/'bottom'|Describe which direction should drawer popup |'left'|
-escapeOnPress | Boolean ||When press ```esc``` should close drawer | true |
-escapeOnClick | Boolean || When click on container(outside of the drawer) should close drawer | true |
-beforeClose | Function || If set, close process will be halted, function accept ```next``` to keep close process continue| - |
+escap-on-press | Boolean ||When press ```esc``` should close drawer | true |
+escape-on-click | Boolean || When click on container(outside of the drawer) should close drawer | true |
+before-close | Function || If set, close process will be halted, function accept ```next``` to keep close process continue| - |
 open |||Trigger when drawer open | - |
 opened |||Trigger when drawer open animation is finished | - |
 close ||| Trigger when drawer close | - | 
 closed ||| Trigger when drawer closed animation is finished | - |
-header | Slot | 
+header | Slot || Slot which named ```header```|- |
+- | Slot || Default slot on drawer's content| - |
+footer | Slot || Slot which named ```footer```| - |
+
 
 
 
