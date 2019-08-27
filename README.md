@@ -25,7 +25,7 @@ custom-class | String || Add a custom class on drawer container | - |
 location | String |'left'/'right'/'top'/'bottom'|Describe which direction should drawer popup |'left'|
 escapeOnPress | Boolean ||When press ```esc``` should close drawer | true |
 escapeOnClick | Boolean || When click on container(outside of the drawer) should close drawer | true |
-beforeClose | Function || If set, close process will be halted| - |
+beforeClose | Function || If set, close process will be halted, function accept ```next``` to keep close process continue| - |
 open |||Trigger when drawer open | - |
 opened |||Trigger when drawer open animation is finished | - |
 close ||| Trigger when drawer close | - | 
