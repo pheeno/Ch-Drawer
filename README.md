@@ -12,7 +12,8 @@ npm install ch-drawer --save
 ```javascript
 import Vue from 'vue';
 import ChDrawer from 'ch-drawer'
-Vue.use(ChDrawer)
+Vue.use(ChDrawer, { zIndex: 1000 });
+// zIndex default value is 200
 ```
 ## API
 | Attribute | Type | Accepted Values | Description | Default |
