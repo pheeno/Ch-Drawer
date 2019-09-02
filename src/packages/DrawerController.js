@@ -47,6 +47,14 @@ export const DrawerMixin = {
   beforeMount () {
     drawerId++
   },
+  mounted () {
+    window.addEventListener('keydown', function (e) {
+      if (e.keyCode === 27) {
+        const topIns = DrawerController.getCurrentTopInstance()
+        topIns && topIns.instance.escapeOnPress && topIns.instance.closeDrawer()
+      }
+    })
+  },
   methods: {
     open () {
       this.rendered = true
@@ -67,10 +75,3 @@ export const DrawerMixin = {
     }
   }
 }
-
-window.addEventListener('keydown', function (e) {
-  if (e.keyCode === 27) {
-    const topIns = DrawerController.getCurrentTopInstance()
-    topIns && topIns.instance.escapeOnPress && topIns.instance.closeDrawer()
-  }
-})

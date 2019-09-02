@@ -1,7 +1,6 @@
 <template>
   <div>
     <component :is='componentName'></component>
-    <slot></slot>
   </div>
 </template>
 <script>
