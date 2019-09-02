@@ -1,0 +1,47 @@
+
+body {
+  .location-button {
+    display inline-block
+    line-height 1
+    white-space nowrap
+    cursor pointer
+    background #fff
+    border 1px solid #dcdfe6
+    -webkit-appearance none
+    text-align center
+    box-sizing border-box
+    outline none
+    margin 0
+    transition 0.1s
+    font-weight 500
+    -moz-user-select none
+    -webkit-user-select none
+    -ms-user-select none
+    padding 8px 16px
+    font-size 14px
+    border-radius 4px
+    color #fff
+    background-color #3eaf7c
+    border-color #3eaf7c
+    &:hover {
+      opacity 0.8
+    }
+    &:active {
+      background-color #2d9a69
+      border-color #2d9a69
+    }
+  }
+}
+.theme-default-content {
+  min-width 760px
+  .location, .nested {
+    border 1px solid #f0f0f0
+    padding 2em 1em
+    display flex
+    border-radius 4px
+    align-items center
+    .location-button__wrapper {
+      margin-left 2em
+    }
+  }
+}

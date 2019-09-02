@@ -203,8 +203,10 @@ describe('events', () => {
 })
 describe('before close', () => {
   const beforeClose = jest.fn()
-  const wrapper = factory({ propsData: { visible: true, beforeClose }, attachToDocument: true })
+  const wrapper = factory({ propsData: { visible: false, beforeClose }, attachToDocument: true })
   test('correct excute before close hook on', () => {
+    wrapper.setProps({ visible: true })
+    expect(beforeClose).not.toHaveBeenCalled()
     wrapper.setProps({ visible: false })
     expect(beforeClose).toHaveBeenCalled()
   })

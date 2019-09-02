@@ -85,7 +85,8 @@ export default {
   },
   data () {
     return {
-      rendered: false
+      rendered: false,
+      isClosed: true
     }
   },
   computed: {
@@ -128,6 +129,8 @@ export default {
       this.escapeOnClick && this.closeDrawer()
     },
     closeDrawer () {
+      if (this.isClosed) return
+      this.isClosed = true
       this.beforeClose && typeof this.beforeClose === 'function'
         ? this.beforeClose(this.close)
         : this.close()
