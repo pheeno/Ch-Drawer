@@ -3,7 +3,14 @@
   "version": "0.0.2",
   "private": false,
   "main": "dist/ch-drawer.common.js",
-  "keyword": "vue-drawer drawer web-drawer",
+  "keyword": [
+    "vue drawer",
+    "drawer",
+    "sidebar",
+    "vue",
+    "sider",
+    "web drawer"
+  ],
   "author": "Johnny 'Boggie' Ness",
   "license": "MIT",
   "repository": {
