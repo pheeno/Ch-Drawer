@@ -28,7 +28,7 @@
     "style-output": "stylus ./src/packages/style.styl -o ./src/packages/style.css",
     "style-check": "npm run style-reset & npm run style-output",
     "docs:dev": "sudo vuepress dev docs",
-    "docs:build": "sudo vuepress build docs"
+    "docs:build": "vuepress build docs"
   },
   "devDependencies": {
     "core-js": "^2.6.5",
