@@ -68,3 +68,4 @@ Vue.use(ChDrawer, { zIndex: 1000 });
 |      header      |     Slot      |                               | 头部插槽                                                                                                                                                                                                            |    -    |
 |     default      |     Slot      |                               | 内容插槽(默认插槽)                                                                                                                                                                                                      |    -    |
 |      footer      |     Slot      |                               | 底部插槽                                                                                                                                                                                                             |    -    |
+

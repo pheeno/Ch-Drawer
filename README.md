@@ -1,6 +1,7 @@
 # Ch-Drawer  
 
 ![Build Status](https://www.travis-ci.org/pheeno/Ch-Drawer.svg?branch=master)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/5f83335c-7ff0-47bf-bcb8-1715e37a50cf/deploy-status)](https://app.netlify.com/sites/chdrawer/deploys)
 
 A simple drawer component based on Vue.js and used on Web  [docs here](https://chdrawer.netlify.com/)
 ## Install
