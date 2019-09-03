@@ -64,10 +64,14 @@ export const DrawerMixin = {
       this.$el.style.zIndex = this.$chDrawerZIndex + DrawerController.getCurrentZ()
       if (DrawerController.shouldToggleBlur(this.id)) {
         this.blur && this.$root.$el.classList.add('drawer--blur')
+        document.body.classList.add('toggle-over-flow')
       }
     },
     close () {
-      this.blur && DrawerController.shouldToggleBlur(this.id) && this.$root.$el.classList.remove('drawer--blur')
+      if (this.blur && DrawerController.shouldToggleBlur(this.id)) {
+        this.$root.$el.classList.remove('drawer--blur')
+        document.body.classList.remove('toggle-over-flow')
+      }
       DrawerController.unregisterInstance(this.id)
       this.destroyOnClose && (this.rendered = false)
       this.$emit('update:visible', false)

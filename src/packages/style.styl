@@ -79,16 +79,16 @@ drawerAnimationIn($location) {
 drawerAnimationOut($location) {
   .ch-drawer--{$location} {
     if ($location == left) {
-      animation left-drawer-out 300s cubic-bezier(0, 1.03, .91, .97)
+      animation left-drawer-out 300ms cubic-bezier(0, 1.03, .91, .97) forwards
     }
     if ($location == right) {
-      animation right-drawer-out 300ms cubic-bezier(0, 1.03, .91, .97)
+      animation right-drawer-out 300ms cubic-bezier(0, 1.03, .91, .97) forwards
     }
     if ($location == bottom) {
-      animation bottom-drawer-out 300ms cubic-bezier(0, 1.03, .91, .97)
+      animation bottom-drawer-out 300ms cubic-bezier(0, 1.03, .91, .97) forwards
     }
     if ($location == top) {
-      animation top-drawer-out 300ms cubic-bezier(0, 1.03, .91, .97)
+      animation top-drawer-out 300ms cubic-bezier(0, 1.03, .91, .97) forwards
     }
   }
 }
@@ -106,6 +106,9 @@ apply(drawerAnimationOut, left, right, bottom, top)
 }
 .drawer--blur {
   filter blur(2px)
+}
+.toggle-over-flow{
+  overflow hidden
 }
 .ch-drawer {
   position absolute
