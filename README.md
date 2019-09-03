@@ -1,6 +1,6 @@
 # Ch-Drawer  
 
-<!-- ![Build Status](https://www.travis-ci.org/pheeno/Ch-Drawer.svg?branch=master) -->
+![Build Status](https://www.travis-ci.org/pheeno/Ch-Drawer.svg?branch=master)
 
 A simple drawer component based on Vue.js and used on Web  [docs here](https://chdrawer.netlify.com/)
 ## Install
