@@ -30,9 +30,7 @@ Vue.use(ChDrawer, { zIndex: 1000 });
 ### 基本用法
 
 支持四个方向的抽屉弹出方式，支持点击遮罩或按下`esc`关闭。
-<ClientOnly>
 <demo componentName='examples-examples-location'></demo>
-</ClientOnly>
 
 #### 源码
 
@@ -41,9 +39,7 @@ Vue.use(ChDrawer, { zIndex: 1000 });
 ### 带有嵌套的抽屉
 
 支持多层嵌套的抽屉弹出使用方式,同时支持头部、内容、底部`slot`插槽注入
-<ClientOnly>
 <demo componentName='examples-examples-nested'></demo>
-</ClientOnly>
 
 #### 源码
 
