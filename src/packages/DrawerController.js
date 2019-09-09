@@ -67,15 +67,18 @@ export const DrawerMixin = {
         document.body.classList.add('toggle-over-flow')
       }
     },
-    close () {
-      if (this.blur && DrawerController.shouldToggleBlur(this.id)) {
-        this.$root.$el.classList.remove('drawer--blur')
-        document.body.classList.remove('toggle-over-flow')
+    close (cancel) {
+      if (!cancel) {
+        this.isClosed = true
+        if (this.blur && DrawerController.shouldToggleBlur(this.id)) {
+          this.$root.$el.classList.remove('drawer--blur')
+          document.body.classList.remove('toggle-over-flow')
+        }
+        DrawerController.unregisterInstance(this.id)
+        this.destroyOnClose && (this.rendered = false)
+        this.$emit('update:visible', false)
+        this.$emit('close')
       }
-      DrawerController.unregisterInstance(this.id)
-      this.destroyOnClose && (this.rendered = false)
-      this.$emit('update:visible', false)
-      this.$emit('close')
     }
   }
 }

@@ -130,7 +130,6 @@ export default {
     },
     closeDrawer () {
       if (this.isClosed) return
-      this.isClosed = true
       this.beforeClose && typeof this.beforeClose === 'function'
         ? this.beforeClose(this.close)
         : this.close()

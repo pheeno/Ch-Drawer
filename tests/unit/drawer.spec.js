@@ -42,6 +42,17 @@ describe('drawer render', () => {
     wrapper.setProps({ visible: false })
     expect(wrapper.isVisible()).toBeFalsy()
   })
+  test('called close fn just once', () => {
+    const propsData = { visible: false }
+    wrapper = factory({ propsData, attachToDocument: true })
+    // const close = jest.spyOn(wrapper.vm, 'close')
+    wrapper.setProps({ visible: true })
+    expect(wrapper.vm.isClose).toBeFalsy()
+    const container = wrapper.vm.$el.querySelector('.ch-drawer__container')
+    container.click()
+    // expect(close).toHaveBeenCalledTimes(1)
+    expect(wrapper.vm.isClosed).toBeTruthy()
+  })
   test('correct append to body', () => {
     const propsData = { visible: true }
     wrapper = factory({ propsData, attachToDocument: true })
