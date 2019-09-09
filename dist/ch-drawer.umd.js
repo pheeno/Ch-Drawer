@@ -1632,12 +1632,12 @@ if (typeof window !== 'undefined') {
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.function.name.js
 var es6_function_name = __webpack_require__("7f7f");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"7cfe97f9-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/packages/Drawer.vue?vue&type=template&id=0cef059b&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"7cfe97f9-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/packages/Drawer.vue?vue&type=template&id=e48bde5a&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('transition',{attrs:{"name":"ch-drawer"},on:{"after-enter":_vm.afterEnter,"after-leave":_vm.afterLeave}},[_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.visible),expression:"visible"}],staticClass:"ch-drawer__wrapper"},[_c('div',{staticClass:"ch-drawer__mask",class:{"ch-drawer__mask--default":_vm.mask}}),_c('div',{staticClass:"ch-drawer__container",class:_vm.isDrawerOpen,on:{"click":function($event){if($event.target !== $event.currentTarget){ return null; }return _vm.handleContainerClick($event)}}},[_c('div',{staticClass:"ch-drawer",class:[("ch-drawer--" + _vm.location),_vm.customClass],style:(_vm.isVertical? {width:_vm.area} : {height:_vm.area})},[_c('header',{staticClass:"ch-drawer__header"},[_vm._t("header",[_c('span',[_vm._v(_vm._s(_vm.title))])]),(_vm.closeVisible)?_c('div',{staticClass:"ch-drawer__close-btn",on:{"click":_vm.closeDrawer}}):_vm._e()],2),(_vm.rendered)?_c('section',{staticClass:"ch-drawer__content"},[_vm._t("default")],2):_vm._e(),(_vm.hasFooter)?_c('footer',{staticClass:"ch-drawer__footer"},[_vm._t("footer")],2):_vm._e()])])])])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/packages/Drawer.vue?vue&type=template&id=0cef059b&
+// CONCATENATED MODULE: ./src/packages/Drawer.vue?vue&type=template&id=e48bde5a&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es7.array.includes.js
 var es7_array_includes = __webpack_require__("6762");
@@ -1736,16 +1736,20 @@ var DrawerMixin = {
         document.body.classList.add('toggle-over-flow');
       }
     },
-    close: function close() {
-      if (this.blur && DrawerController.shouldToggleBlur(this.id)) {
-        this.$root.$el.classList.remove('drawer--blur');
-        document.body.classList.remove('toggle-over-flow');
-      }
+    close: function close(cancel) {
+      if (!cancel) {
+        this.isClosed = true;
 
-      DrawerController.unregisterInstance(this.id);
-      this.destroyOnClose && (this.rendered = false);
-      this.$emit('update:visible', false);
-      this.$emit('close');
+        if (this.blur && DrawerController.shouldToggleBlur(this.id)) {
+          this.$root.$el.classList.remove('drawer--blur');
+          document.body.classList.remove('toggle-over-flow');
+        }
+
+        DrawerController.unregisterInstance(this.id);
+        this.destroyOnClose && (this.rendered = false);
+        this.$emit('update:visible', false);
+        this.$emit('close');
+      }
     }
   }
 };
@@ -1886,7 +1890,6 @@ var DrawerMixin = {
     },
     closeDrawer: function closeDrawer() {
       if (this.isClosed) return;
-      this.isClosed = true;
       this.beforeClose && typeof this.beforeClose === 'function' ? this.beforeClose(this.close) : this.close();
     }
   }
