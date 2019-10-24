@@ -1,10 +1,10 @@
 import Drawer from './Drawer.vue'
 
 export default {
-  install: function (Vue, { zIndex = 200 } = {}) {
+  install: function (Vue, { zIndex = 200, name = Drawer.name } = {}) {
     if (zIndex) {
       Vue.prototype.$chDrawerZIndex = zIndex
     }
-    Vue.component(Drawer.name, Drawer)
+    Vue.component(name, Drawer)
   }
 }
